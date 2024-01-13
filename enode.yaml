@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enode
+  template:
+    metadata:
+      labels:
+        app: enode
+    spec:
+      containers:
+      - name: enodecontainer
+        image: evandangol/enode
+        ports:
+        - containerPort: 3000
